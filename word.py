@@ -1,6 +1,7 @@
-import os
+import os, glob
 import collections
 import pandas as pd
+import csv
 
 path = "data/"
 all_files = os.listdir(path)
@@ -21,13 +22,11 @@ for word in text.lower().split():
     word = word.replace(":","")
     word = word.replace(";","")
     word = word.replace("'","")
-    word = word.replace("/","")
     word = word.replace("\"","")
     word = word.replace("\'","")
     word = word.replace("!","")
     word = word.replace("?","")
     word = word.replace("-","")
-    word = word.replace("--","")
     word = word.replace("$","")
     word = word.replace("*","")
     if word not in stopwords:
@@ -51,3 +50,8 @@ f.close()
 list = os.listdir('data/') # data/ is your directory path
 number_files = len(list)
 print(number_files, ": files in data directory")
+
+# Pull name of csv files in data directory 
+parent_dir = 'data/'
+for csv_file in glob.glob(os.path.join(parent_dir, '*.csv')):
+    print (csv_file)
