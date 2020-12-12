@@ -1,22 +1,27 @@
+import os
 import collections
 import pandas as pd
 
-file = open('doc1.txt', encoding="utf8")
-a= file.read()
+path = "data/"
+all_files = os.listdir(path)
 
-stopwords = set(line.strip() for line in open('stopwords.txt'))
-stopwords = stopwords.union(set(['mr','mrs','one','two','said']))
+for story in all_files:
+   # open the file and then call .read() to get the text
+   with open(os.path.join(path, story),"rt") as f:
+      text = f.read()
+
+stopwords = set(line.strip() for line in open('data/stopwords.txt'))
 
 wordcount = {}
 
-for word in a.lower().split():
+for word in text.lower().split():
     word = word.replace(".","")
     word = word.replace(",","")
     word = word.replace(":","")
+    word = word.replace("'","")
     word = word.replace("\"","")
     word = word.replace("!","")
-    word = word.replace("â€œ","")
-    word = word.replace("â€˜","")
+    word = word.replace("-","")
     word = word.replace("*","")
     if word not in stopwords:
         if word not in wordcount:
@@ -32,5 +37,5 @@ for word, count in word_counter.most_common(n_print):
     print(word, ": ", count)
 
 # Close the file
-file.close()
+f.close()
 
