@@ -11,14 +11,16 @@ all_files = os.listdir(path)
 for story in all_files:
    # open the file and then call .read() to get the text
    with open(os.path.join(path, story),"rt") as f:
-
-           text = f.read()
+       
+       text = f.read()
 
 stopwords = set(line.strip() for line in open('data/stopwords.csv'))
 
 wordcount = {}
 
 for word in text.lower().split():
+    word = word.replace(" ","")
+    word = word.replace("-","")
     word = word.replace(".","")
     word = word.replace(",","")
     word = word.replace(":","")
@@ -29,6 +31,8 @@ for word in text.lower().split():
     word = word.replace("!","")
     word = word.replace("?","")
     word = word.replace("$","")
+    word = word.replace("%","")
+    word = word.replace("*","")
     if word not in stopwords:
         if word not in wordcount:
             wordcount[word] = 1
