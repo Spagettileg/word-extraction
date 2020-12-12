@@ -1,8 +1,6 @@
 import os
 import collections
 import pandas as pd
-import csv
-import string
 
 path = "data/"
 all_files = os.listdir(path)
@@ -10,9 +8,6 @@ all_files = os.listdir(path)
 for story in all_files:
    # open the file and then call .read() to get the text
    with open(os.path.join(path, story),"rt") as f:
-       reader = csv.reader(f, delimiter=",")
-       for row in csv.reader(f):
-        row = [col.strip() for col in row]
 
         text = f.read()
 
