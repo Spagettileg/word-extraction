@@ -39,3 +39,8 @@ for word, count in word_counter.most_common(n_print):
 # Close the file
 f.close()
 
+
+# Count files in data directory
+list = os.listdir('data/') # data/ is your directory path
+number_files = len(list)
+print(number_files, ": files in data directory")
