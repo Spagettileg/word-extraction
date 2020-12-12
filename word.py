@@ -10,7 +10,7 @@ for story in all_files:
    with open(os.path.join(path, story),"rt") as f:
       text = f.read()
 
-stopwords = set(line.strip() for line in open('data/stopwords.txt'))
+stopwords = set(line.strip() for line in open('data/stopwords.csv'))
 
 wordcount = {}
 
