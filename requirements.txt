@@ -7,7 +7,6 @@ colorama==0.4.3
 decorator==4.4.2
 Django==2.0.2
 docutils==0.15.2
-Flask==1.1.2
 git-remote-codecommit==1.15.1
 ikp3db==1.4.1
 importlib-metadata==3.1.1
@@ -23,6 +22,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 numpy==1.19.4
 pandas==1.1.5
+parso==0.1.1
 pbr==5.5.1
 pexpect==4.8.0
 pickleshare==0.7.5
