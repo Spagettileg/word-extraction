@@ -10,7 +10,7 @@ all_files = os.listdir(path)
 
 for story in all_files:
    # open the file and then call .read() to get the text
-   with open(os.path.join(path, story),"rt") as f:
+   with open(os.path.join(path, story),"r") as f:
        
        text = f.read()
 
