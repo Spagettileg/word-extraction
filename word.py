@@ -1,11 +1,12 @@
 import os, glob
 import collections
 import pandas as pd
+import csv
 
 path = "data/"
 all_files = os.listdir(path)
 
-# Word extraction from .txt files in data directory
+# Word extraction from .csv files in data directory
 
 for story in all_files:
    # open the file and then call .read() to get the text
@@ -13,7 +14,7 @@ for story in all_files:
        
        text = f.read()
 
-stopwords = set(line.strip() for line in open('data/stopwords.txt'))
+stopwords = set(line.strip() for line in open('data/stopwords.csv'))
 
 wordcount = {}
 
@@ -55,7 +56,7 @@ list = os.listdir('data/') # data/ is the directory path
 number_files = len(list)
 print(number_files, ": files in data directory")
 
-# Pull name of txt files in data directory 
+# Pull name of csv files in data directory 
 parent_dir = 'data/'
-for txt_file in glob.glob(os.path.join(parent_dir, '*.txt')):
-    print (txt_file)
+for csv_file in glob.glob(os.path.join(parent_dir, '*.csv')):
+    print (csv_file)
