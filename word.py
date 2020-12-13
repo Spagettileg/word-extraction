@@ -18,7 +18,9 @@ stopwords = set(line.strip() for line in open('data/stopwords.txt'))
 wordcount = {}
 
 for word in text.lower().split():
-    word = word.replace(" ","")
+    word = word.replace("\h","")
+    word = word.replace("\v","")
+    word = word.replace("\s","")
     word = word.replace("-","")
     word = word.replace(".","")
     word = word.replace(",","")
