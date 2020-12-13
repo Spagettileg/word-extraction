@@ -2,13 +2,6 @@ import os, glob
 import collections
 import pandas as pd
 import csv
-from flask import Flask, render_template, request
-
-app = Flask(__name__)
-"""
-Flask convention (__name__) is our variable is called 'app'. Creating an
-instance & storing in a variable called 'app'
-"""
 
 path = "data/"
 all_files = os.listdir(path)
